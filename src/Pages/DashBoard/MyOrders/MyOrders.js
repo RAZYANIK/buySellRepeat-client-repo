@@ -29,10 +29,11 @@ const MyOrders = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Image</th>
+                            <th>Product Image</th>
                             <th>Product Name</th>
                             <th>Price</th>
                             <th>location</th>
+                            <th>Payment Status</th>
                         </tr>
                     </thead>
                     <tbody>

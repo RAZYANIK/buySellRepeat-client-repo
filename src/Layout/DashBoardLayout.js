@@ -17,7 +17,7 @@ const DashBoardLayout = () => {
                         <li><Link to="/dashboard" className='font-semibold'>My Orders</Link></li>
                         {
                             // isAdmin && <>
-                            <li><Link to="/dashboard/allusers" className='font-semibold'>All users</Link></li>
+                            <li><Link to="/dashboard/allbuyer" className='font-semibold'>All Buyer</Link></li>
                             // </>
                         }
 
