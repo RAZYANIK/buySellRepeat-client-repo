@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+Assignment-12:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+site name:BuySellRepeat
 
-## Available Scripts
+site link: https://assignment-12-9aa5e.web.app/
 
-In the project directory, you can run:
+This is a resale market place for old and unused product, this site will help anyone interested to buy or sale their unused goods for a good resonable price.
 
-### `npm start`
+-this web site contains various Computer product like ase Mouse, Monitor and GPUS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-Here one can come and look for good product and book those when they want and can buy anytime.here a buyer can find every details about the product and the seller's information.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Here anyone can visit our site check our items without login, they can see our those various categories product's price and detail information.
 
-### `npm test`
+-This site made in a way so that anyone who visiting first time can easily navigate throughout differnt pages.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-User also can give any with opening a account can publish their product free of cost and can sell them to large number of peoples.
 
-### `npm run build`
+-they Also can find a donation option for donation their unused product to the poor people.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-also they can give advertisement about their unsold product.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-seller can add their product to this market place with enough information.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-they can sign up by using their Gmail(which will save lot of time for them) account or register by using any email address , name and password.
 
-### `npm run eject`
+technologies (frameworks, libraries) used to this projects:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-React,react-router,Firebase for Authentication,react-photo-view,react-tailwind,daisy ui,env variable,payment,axios,query function, and JWT token for ensure more security, for backend we use express js node js mongodb atlas(NoSQL database) crud oporation and vercel for server deploy.
