@@ -3,13 +3,31 @@ import React from 'react';
 const Blog = () => {
     return (
         <div>
-            <h1 className='text-center text-5xl font-bold mb-10 mt-20'>Welcome to Our Daily JS blog</h1>
+            <h1 className='text-center text-5xl font-bold mb-10 mt-20'>Welcome to Our Daily Web dev blog</h1>
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-success rounded-box mt-10">
                 <div className="collapse-title text-xl font-medium">
                     What are the different ways to manage a state in a React application?
                 </div>
                 <div className="collapse-content">
-                    <p>SQL is the programming language used to interface with relational databases. (Relational databases model data as records in rows and tables with logical links between them). NoSQL is a class of DBMs that are non-relational and generally do not use SQL.</p>
+                    <p>In React apps, there are at least seven ways to handle the state. Let us explore a few of them in this part. <br />
+                        1. We can use URL to store some data e.g.
+
+                        The id of the current item, being viewed
+                        Filter parameters
+                        Pagination offset and limit
+                        Sorting data
+                        Keeping such data in the URL allows users to share deep links with others.
+                        <br />
+                        2. Web Storage
+                        The second option is to store the state in the browser via web storage. This is useful when we want to persist state between reloads and reboots. Examples include cookies, local storage, and IndexedDB. These are native browser technologies.
+
+                        Data persisted in the browser is tied to a single browser. So, if the user loads the site in a different browser, the data will not be available.
+                        <br />
+                        3. Local State
+                        The third option is to use store state locally. It is useful when one component needs the state. Examples include a toggle button, a form, etc
+                        <br />
+                        4. Lifted State
+                        The Fourth option is to define the state in the parent component. Often, the same state is used across multiple components. In those cases, it is useful to lift the state to a common parent. The lifting state is a two‑step process. First, we declare the state in a common parent component, and then we pass the state down to child components via props. This pattern should be considered any time a few related components need to use the same state. The lifting state avoids duplicating states in multiple components. It helps to assure that our components all consistently reflect the same state.</p>
                 </div>
             </div>
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-success rounded-box">
