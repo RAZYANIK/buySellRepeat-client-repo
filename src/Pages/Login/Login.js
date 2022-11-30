@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+// import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -36,7 +36,7 @@ const Login = () => {
             });
     }
     const handleGoogleSignIn = () => {
-        signInWithGoogle(GoogleAuthProvider)
+        signInWithGoogle()
             .then(result => {
                 const user = result.user;
                 console.log('registered', user);

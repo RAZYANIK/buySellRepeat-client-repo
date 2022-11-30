@@ -55,7 +55,7 @@ const AddProduct = () => {
     return (
         <div>
             {/* name, location, Img, OriginalPrice, ResalePrice, yearOfUse, sellerName */}
-            <h2 className="text-3xl my-5 font-bold">Add a product</h2>
+            <h2 className="text-3xl my-5 font-bold">Add a new product</h2>
             <div>
                 <h3 className="text-lg ">Input your Product details</h3>
                 <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 lg:w-[650px] mt-10 border-2 border-black p-10 bg-black'>
