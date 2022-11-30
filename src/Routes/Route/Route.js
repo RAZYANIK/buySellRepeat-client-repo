@@ -5,7 +5,6 @@ import Blog from "../../Pages/Blog/Blog";
 import AddProduct from "../../Pages/DashBoard/AddProduct/AddProduct";
 import AllBuyers from "../../Pages/DashBoard/AllBuyers/AllBuyers";
 import AllSeller from "../../Pages/DashBoard/AllSeller/AllSeller";
-import DashBoard from "../../Pages/DashBoard/DashBoard/DashBoard";
 import MyOrders from "../../Pages/DashBoard/MyOrders/MyOrders";
 import MyProduct from "../../Pages/DashBoard/MyProducts/MyProduct";
 import ReportedItem from "../../Pages/DashBoard/ReportedItem/ReportedItem";

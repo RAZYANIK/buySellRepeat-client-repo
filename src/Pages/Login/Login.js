@@ -1,3 +1,4 @@
+// import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -39,6 +40,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log('registered', user);
+                // setLoginUserEmail(data.email);
                 navigate(from, { replace: true });
 
             })

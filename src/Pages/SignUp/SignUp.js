@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import toast from 'react-hot-toast';
 import useToken from '../../hooks/useToken';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -42,10 +43,11 @@ const SignUp = () => {
             });
     }
     const handleGoogleSignIn = () => {
-        signInWithGoogle()
+        signInWithGoogle(GoogleAuthProvider)
             .then(result => {
                 const user = result.user;
                 console.log('registered', user);
+                saveUser(user.displayName, user.email)
                 navigate(from, { replace: true });
 
             })
@@ -64,6 +66,7 @@ const SignUp = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 setCreatedUserEmail(email);
             })
     }
