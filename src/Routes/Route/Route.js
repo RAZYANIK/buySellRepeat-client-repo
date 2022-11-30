@@ -7,6 +7,7 @@ import AllBuyers from "../../Pages/DashBoard/AllBuyers/AllBuyers";
 import AllSeller from "../../Pages/DashBoard/AllSeller/AllSeller";
 import DashBoard from "../../Pages/DashBoard/DashBoard/DashBoard";
 import MyOrders from "../../Pages/DashBoard/MyOrders/MyOrders";
+import MyProduct from "../../Pages/DashBoard/MyProducts/MyProduct";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import ProductDetails from "../../Pages/Product/ProductDetails";
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/addproduct',
                 element: <AddProduct></AddProduct>
+            },
+            {
+                path: '/dashboard/myproduct',
+                element: <MyProduct></MyProduct>
             },
             {
                 path: '/dashboard/allbuyer',

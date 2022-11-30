@@ -26,6 +26,7 @@ const DashBoardLayout = () => {
                             </>
                         }
                         <li><Link to="/dashboard/addproduct" className='font-semibold'>Add Product</Link></li>
+                        <li><Link to="/dashboard/myproduct" className='font-semibold'>My Product</Link></li>
                     </ul>
 
                 </div>
