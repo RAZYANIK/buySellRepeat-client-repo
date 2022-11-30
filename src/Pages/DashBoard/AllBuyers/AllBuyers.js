@@ -38,7 +38,7 @@ const AllBuyers = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Admin</th>
+                            <th>Verification</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -48,7 +48,7 @@ const AllBuyers = () => {
                                 <th>{i + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-success'>Make Verified</button>}</td>
+                                <td>{(user?.seller !== 'verified') ? <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-success'>Make Verified</button> : <button className='btn btn-xs btn-info'>verified</button>}</td>
                                 <td><button className='btn btn-xs btn-error'>Delete</button></td>
                             </tr>)
                         }

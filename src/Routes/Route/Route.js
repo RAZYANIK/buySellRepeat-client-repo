@@ -2,13 +2,16 @@ import { createBrowserRouter } from "react-router-dom";
 import DashBoardLayout from "../../Layout/DashBoardLayout";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
+import AddProduct from "../../Pages/DashBoard/AddProduct/AddProduct";
 import AllBuyers from "../../Pages/DashBoard/AllBuyers/AllBuyers";
+import AllSeller from "../../Pages/DashBoard/AllSeller/AllSeller";
 import DashBoard from "../../Pages/DashBoard/DashBoard/DashBoard";
 import MyOrders from "../../Pages/DashBoard/MyOrders/MyOrders";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import ProductDetails from "../../Pages/Product/ProductDetails";
 import SignUp from "../../Pages/SignUp/SignUp";
+import AdminRoute from "../AdminRoutes/AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -48,8 +51,16 @@ export const router = createBrowserRouter([
                 element: <MyOrders></MyOrders>
             },
             {
+                path: '/dashboard/addproduct',
+                element: <AddProduct></AddProduct>
+            },
+            {
                 path: '/dashboard/allbuyer',
-                element: <AllBuyers></AllBuyers>
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
+            },
+            {
+                path: '/dashboard/allseller',
+                element: <AdminRoute><AllSeller></AllSeller></AdminRoute>
             },
         ]
     },
