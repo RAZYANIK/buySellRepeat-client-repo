@@ -58,14 +58,25 @@ const AddProduct = () => {
             <h2 className="text-3xl my-5 font-bold">Add a product</h2>
             <div>
                 <h3 className="text-lg ">Input your Product details</h3>
-                <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10 border-2 border-black p-10 bg-black'>
+                <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 lg:w-[650px] mt-10 border-2 border-black p-10 bg-black'>
                     <input name="name" type="text" placeholder='Product Name' className='input w-full input-bordered input-success' />
                     <input name="image" type="text" placeholder='Product image URL' className='input w-full input-bordered input-success' />
                     <input name="ResalePrice" type="text" placeholder='Price' className='input w-full input-bordered input-success' />
-                    <input name="condition" type="text" placeholder='Condition of your product:(excellent/good/fair)' className='input w-full input-bordered input-success' />
+                    <label className='text-white text-sm'>Condition of your product</label>
+                    <select name="condition" type="text" placeholder='Condition of your product:(excellent/good/fair)' className='input w-full input-bordered input-success'>
+                        <option>excellent</option>
+                        <option>good</option>
+                        <option>fair</option>
+                    </select>
+
                     <input name="phone" type="text" placeholder='Phone Number' className='input w-full input-bordered input-success' />
                     <input name="location" type="text" placeholder='location' className='input w-full input-bordered input-success' />
-                    <input name="category_Name" type="text" placeholder='Product category' className='input w-full input-bordered input-success' />
+                    <label className='text-white text-sm'>Your product category</label>
+                    <select name="category_Name" type="text" placeholder='Product category' className='input w-full input-bordered input-success' >
+                        <option>GPU</option>
+                        <option>Mouse</option>
+                        <option>Monitor</option>
+                    </select>
                     <input name="OriginalPrice" type="text" placeholder='original price' className='input w-full input-bordered input-success' />
                     <input name="yearOfUse" type="text" placeholder='year of purchase' className='input w-full input-bordered input-success' />
                     <br />

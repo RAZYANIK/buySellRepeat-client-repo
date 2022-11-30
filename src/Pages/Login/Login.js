@@ -1,4 +1,4 @@
-// import { GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -36,16 +36,31 @@ const Login = () => {
             });
     }
     const handleGoogleSignIn = () => {
-        signInWithGoogle()
+        signInWithGoogle(GoogleAuthProvider)
             .then(result => {
                 const user = result.user;
                 console.log('registered', user);
+                saveUser(user.displayName, user.email)
                 // setLoginUserEmail(data.email);
                 navigate(from, { replace: true });
 
             })
             .catch(error => {
                 console.error(error);
+            })
+    }
+    const saveUser = (name, email) => {
+        const user = { name, email };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
             })
     }
 

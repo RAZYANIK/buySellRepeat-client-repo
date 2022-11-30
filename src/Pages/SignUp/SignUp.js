@@ -1,25 +1,25 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import toast from 'react-hot-toast';
 import useToken from '../../hooks/useToken';
-import { GoogleAuthProvider } from 'firebase/auth';
+
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const { createUser, signInWithGoogle, updateUser } = useContext(AuthContext);
+    const { createUser, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUPError] = useState('')
     const [createUserEmail, setCreatedUserEmail] = useState('')
     const [token] = useToken(createUserEmail);
-    const location = useLocation();
+
     const navigate = useNavigate();
 
     if (token) {
         navigate('/');
     }
-    const from = location.state?.from?.pathname || '/';
+
 
     const handleSignUp = (data) => {
         setSignUPError('');
@@ -42,19 +42,19 @@ const SignUp = () => {
                 setSignUPError(error.message)
             });
     }
-    const handleGoogleSignIn = () => {
-        signInWithGoogle(GoogleAuthProvider)
-            .then(result => {
-                const user = result.user;
-                console.log('registered', user);
-                saveUser(user.displayName, user.email)
-                navigate(from, { replace: true });
+    // const handleGoogleSignIn = () => {
+    //     signInWithGoogle(GoogleAuthProvider)
+    //         .then(result => {
+    //             const user = result.user;
+    //             console.log('registered', user);
+    //             saveUser(user.displayName, user.email)
+    //             navigate(from, { replace: true });
 
-            })
-            .catch(error => {
-                console.error(error);
-            })
-    }
+    //         })
+    //         .catch(error => {
+    //             console.error(error);
+    //         })
+    // }
     const saveUser = (name, email) => {
         const user = { name, email };
         fetch('http://localhost:5000/users', {
@@ -117,8 +117,8 @@ const SignUp = () => {
                     }
                 </form>
                 <p className='mt-2'>Already have an account? <Link className='text-white' to='/login'>Login</Link></p>
-                <div className="divider">OR</div>
-                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>Continue With google</button>
+                {/* <div className="divider">OR</div>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>Continue With google</button> */}
             </div>
         </div>
     );

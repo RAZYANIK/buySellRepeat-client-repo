@@ -37,8 +37,8 @@ const MyOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            bookings.map((booking, i) => <tr key={booking._id}>
+                        {bookings &&
+                            bookings?.map((booking, i) => <tr key={booking._id}>
                                 <th>{i + 1}</th>
                                 <td><img src={booking.Img} alt="product img" className='mask mask-squircle w-12 h-12' /></td>
                                 <td>{booking.Product}</td>
