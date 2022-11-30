@@ -33,7 +33,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email)
+                        saveUser(data.name, data.email, data.role)
                     })
                     .catch(err => console.log(err));
             })
@@ -55,8 +55,8 @@ const SignUp = () => {
     //             console.error(error);
     //         })
     // }
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -97,6 +97,17 @@ const SignUp = () => {
                             })}
                             className="input border-2 border-success w-full max-w-xs" />
                         {errors.email && <p className='text-error'>{errors.email?.message}</p>}
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Select your role</span>
+                        </label>
+                        <select name="condition" type="text" placeholder='Select your role' {...register("role", {
+                            required: "Role is required"
+                        })} className='input w-full input-bordered input-success'>
+                            <option>Buyer</option>
+                            <option>Seller</option>
+                        </select>
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">

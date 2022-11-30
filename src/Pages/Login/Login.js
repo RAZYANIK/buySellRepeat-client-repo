@@ -40,7 +40,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log('registered', user);
-                saveUser(user.displayName, user.email)
+                saveUser(user.displayName, user.email, "Buyer")
                 // setLoginUserEmail(data.email);
                 navigate(from, { replace: true });
 
@@ -49,8 +49,8 @@ const Login = () => {
                 console.error(error);
             })
     }
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
