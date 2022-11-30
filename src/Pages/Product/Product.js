@@ -14,11 +14,15 @@ const Product = ({ product, setBooking }) => {
                     <p className='font-semibold'>Used For: {yearOfUse} Year</p>
                     {/* <p className='font-semibold'>Location: {postTime}</p> */}
                     <p className='font-semibold'>Seller Name: {sellerName}</p>
-                    <p className='font-semibold pb-5'>Location: {location}</p>
+                    <p className='font-semibold '>Location: {location}</p>
                     {/* <PrimaryButton>Book Now</PrimaryButton> */}
+                    <div className="badge badge-error gap-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className=" inline-block w-4 h-4 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        Report to Admin
+                    </div>
                     <label
                         htmlFor="booking-modal"
-                        className="btn bg-gradient-to-r from-green-800 to-green-400 text-black"
+                        className="btn mt-2 bg-gradient-to-r from-green-800 to-green-400 text-black"
                         onClick={() => setBooking(product)}
                     >Book Now</label>
                 </div>

@@ -7,7 +7,7 @@ const Donation = () => {
             <figure className='w-1/2'>
                 <img src={img} alt="Album" />
             </figure>
-            <div className="card-body w-1/2 my-auto ">
+            <div className="card-body w-1/2 my-auto grid sm:grid-cols-2 lg:grid-cols-1 ">
                 <h2 className="card-title text-4xl mx-5">Donate your items</h2>
                 <p className='mx-5'>Give items a new lease of life.
                     We reuse over 71,000 tonnes of donations a year and prevent 135,000 tonnes of CO2 being released into the atmosphere. </p>
