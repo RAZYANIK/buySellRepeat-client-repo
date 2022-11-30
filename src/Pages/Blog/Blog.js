@@ -58,9 +58,15 @@ const Blog = () => {
                     React vs. Angular vs. Vue?
                 </div>
                 <div className="collapse-content">
-                    <p>We are know that Node.js only processes one request at a time using a single thread and an event loop (which is non-blocking). However, how does that operate, let's say there are 10,000 simultaneous queries. Will the event loop complete all of the requests? That might take too much time.
-
-                        How it can be quicker than a multi-threaded web server is something I do not fully understand (yet). I understand that a web server with several threads will cost more to run in terms of memory and CPU, but wouldn't it still be faster? Please clarify why this single-thread is faster in handling many requests and what it generally does (high level) when handling many queries, such as 10,000. </p>
+                    <p>Angular vs. React vs. Vue is one of primary choices in every web development process. The frontend framework you select influences almost everything: speed, and, therefore, cost of development, compatibility with other technologies, app speed and performance, and so on.The variety of technology available is enormous. That’s why we’ve decided to prepare a series of articles comparing the most popular technologies for different purposes. We’re starting with frontend frameworks because they are responsible for what users see in their browser. <br />
+                        The family of JavaScript frameworks is huge. Each has been built to solve different tasks, but their functionality can be extended by using various third-party solutions, which require different levels of expertise. They are all different.
+                        Angular, React and Vue are the top players among JavaScript frameworks for frontend development. They can all be used for any requirement. However, each framework offers something it is extremely good at.
+                        <br />
+                        You don’t need React to build a static blog, but this technology will make a dynamic website work flawlessly. Its sibling, React Native, enables native mobile apps to be built using JavaScript!
+                        <br />
+                        Angular is helpful for building apps with extensive structures. This framework will  impress mobile users with first-class progressive web apps and hybrid mobile apps.
+                        <br />
+                        Vue combines the best features of Angular and React, and is continually expanding its position in the world of web development. With its performance benefits, Vue is already beating its competitors.</p>
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className='grid items-center lg:grid-cols-3 md:grid-cols-3 grid-cols-1'>
+            <div className='flex flex-row-reverse gap-5'>
                 {
                     users.map(user => <Advertisement
                         key={user.id}
