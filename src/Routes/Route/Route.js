@@ -13,6 +13,7 @@ import Login from "../../Pages/Login/Login";
 import ProductDetails from "../../Pages/Product/ProductDetails";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoutes/AdminRoute";
+import SellerRoute from "../SellerRoute/SellerRoute";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -53,11 +54,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/addproduct',
-                element: <AddProduct></AddProduct>
+                element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
             },
             {
                 path: '/dashboard/myproduct',
-                element: <MyProduct></MyProduct>
+                element: <SellerRoute><MyProduct></MyProduct></SellerRoute>
             },
             {
                 path: '/dashboard/allbuyer',
