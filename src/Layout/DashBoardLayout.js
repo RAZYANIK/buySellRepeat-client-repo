@@ -23,6 +23,7 @@ const DashBoardLayout = () => {
                             isAdmin && <>
                                 <li><Link to="/dashboard/allbuyer" className='font-semibold'>All Buyer</Link></li>
                                 <li><Link to="/dashboard/allseller" className='font-semibold'>All Seller</Link></li>
+                                <li><Link to="/dashboard/reporteditem" className='font-semibold'>Reported Items</Link></li>
                             </>
                         }
                         <li><Link to="/dashboard/addproduct" className='font-semibold'>Add Product</Link></li>
