@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import DashBoardLayout from "../../Layout/DashBoardLayout";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
+import GPU from "../../Pages/Categories/GPU/GPU";
+import Monitor from "../../Pages/Categories/Monitor/Monitor";
+import Mouse from "../../Pages/Categories/Mouse/Mouse";
 import AddProduct from "../../Pages/DashBoard/AddProduct/AddProduct";
 import AllBuyers from "../../Pages/DashBoard/AllBuyers/AllBuyers";
 import AllSeller from "../../Pages/DashBoard/AllSeller/AllSeller";
@@ -10,6 +13,7 @@ import MyProduct from "../../Pages/DashBoard/MyProducts/MyProduct";
 import ReportedItem from "../../Pages/DashBoard/ReportedItem/ReportedItem";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import AddedProductList from "../../Pages/Product/AddedProductList/AddedProductList";
 import ProductDetails from "../../Pages/Product/ProductDetails";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoutes/AdminRoute";
@@ -38,9 +42,31 @@ export const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
+                path: '/mouse',
+                element: <PrivateRoute><Mouse></Mouse></PrivateRoute>
+            },
+            {
+                path: '/gpu',
+                element: <PrivateRoute><GPU></GPU></PrivateRoute>
+            },
+            {
+                path: '/monitor/',
+                element: <PrivateRoute><Monitor></Monitor></PrivateRoute>
+
+            },
+            {
+                path: '/monitor/',
+                element: <PrivateRoute><Monitor></Monitor></PrivateRoute>,
+
+            },
+            {
+                path: '/allproduct',
+                element: <AddedProductList></AddedProductList>
+            },
+            {
                 path: '/categories/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-12-server-omega.vercel.app/categories/${params.id}`)
 
             },
         ]

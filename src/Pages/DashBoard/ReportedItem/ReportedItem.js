@@ -6,7 +6,7 @@ const ReportedItem = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you want to delete this review?');
         if (proceed) {
-            fetch(`http://localhost:5000/reportedItems/${id}`, {
+            fetch(`https://assignment-12-server-omega.vercel.app/reportedItems/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -24,7 +24,7 @@ const ReportedItem = () => {
     const { data: products = [], isLoading } = useQuery({
         queryKey: ['reportedItems'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/reportedItems');
+            const res = await fetch('https://assignment-12-server-omega.vercel.app/reportedItems');
             const data = await res.json();
             return data;
         }

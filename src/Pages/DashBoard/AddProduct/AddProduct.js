@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider';
 // import toast from 'react-hot-toast';
 
 const AddProduct = () => {
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const handleBooking = (event) => {
         event.preventDefault();
@@ -19,6 +21,7 @@ const AddProduct = () => {
         const yearOfUse = form.yearOfUse.value;
 
         const booking = {
+            email: user.email,
             image,
             ResalePrice,
             condition,
@@ -30,7 +33,7 @@ const AddProduct = () => {
             yearOfUse
         }
         console.log(booking)
-        fetch('http://localhost:5000/product', {
+        fetch('https://assignment-12-server-omega.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -60,6 +63,7 @@ const AddProduct = () => {
                 <h3 className="text-lg ">Input your Product details</h3>
                 <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 lg:w-[650px] mt-10 border-2 border-black p-10 bg-black'>
                     <input name="name" type="text" placeholder='Product Name' className='input w-full input-bordered input-success' />
+                    <input name="email" type="text" placeholder='your email' defaultValue={user?.email} disabled className='input w-full input-bordered input-success' />
                     <input name="image" type="text" placeholder='Product image URL' className='input w-full input-bordered input-success' />
                     <input name="ResalePrice" type="text" placeholder='Price' className='input w-full input-bordered input-success' />
                     <label className='text-white text-sm'>Condition of your product</label>

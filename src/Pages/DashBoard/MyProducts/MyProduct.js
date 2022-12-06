@@ -1,16 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../../Context/AuthProvider';
 import Loading from '../../Shared/Loading/Loading';
 
 
 const MyProduct = () => {
-
-    const { data: users = [], isLoading } = useQuery({
-        queryKey: ['users'],
+    const { user } = useContext(AuthContext);
+    const { data: users = [], isLoading, refetch } = useQuery({
+        queryKey: ['users', user?.email],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/product');
+            const res = await fetch(`https://assignment-12-server-omega.vercel.app/product?email=${user?.email}`);
             const data = await res.json();
+            refetch();
             return data;
         }
     });
@@ -18,7 +20,7 @@ const MyProduct = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you want to delete this review?');
         if (proceed) {
-            fetch(`http://localhost:5000/product/${id}`, {
+            fetch(`https://assignment-12-server-omega.vercel.app/product/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -33,7 +35,7 @@ const MyProduct = () => {
         }
     }
     const handleAdvertisement = id => {
-        fetch(`http://localhost:5000/product/admin/${id}`, {
+        fetch(`https://assignment-12-server-omega.vercel.app/product/admin/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -53,7 +55,7 @@ const MyProduct = () => {
 
     return (
         <div>
-            <h2 className="text-3xl my-5">My ProDucts</h2>
+            <h2 className="text-3xl my-5">My Products</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -61,6 +63,7 @@ const MyProduct = () => {
                             <th></th>
                             <th>Product Images</th>
                             <th>Name</th>
+                            <th>email</th>
                             <th>category</th>
                             <th>Price</th>
                             <th>status</th>
@@ -80,6 +83,7 @@ const MyProduct = () => {
 
                                 </td>
                                 <td>{user.name}</td>
+                                <td>{user.email}</td>
                                 <td>{user.category}</td>
                                 <td>{user.ResalePrice}</td>
                                 <td>{(user.OriginalPrice < 500) ? <p className='text-error font-bold'>Sold</p> : <p className='text-success font-bold'>Available</p>}</td>

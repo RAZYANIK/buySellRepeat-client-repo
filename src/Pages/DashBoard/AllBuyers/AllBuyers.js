@@ -1,13 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import toast from 'react-hot-toast';
 import Loading from '../../Shared/Loading/Loading';
 
 const AllBuyers = () => {
-    const { data: users = [], refetch, isLoading } = useQuery({
+    const { data: users = [], isLoading } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users/buyer');
+            const res = await fetch('https://assignment-12-server-omega.vercel.app/users/buyer');
             const data = await res.json();
             return data;
         }
@@ -16,7 +15,7 @@ const AllBuyers = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you want to delete this review?');
         if (proceed) {
-            fetch(`http://localhost:5000/users/${id}`, {
+            fetch(`https://assignment-12-server-omega.vercel.app/users/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

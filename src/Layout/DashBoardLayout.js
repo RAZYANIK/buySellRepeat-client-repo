@@ -8,9 +8,9 @@ import Navbar from '../Pages/Shared/NavBar/Navbar';
 
 const DashBoardLayout = () => {
     const { user } = useContext(AuthContext);
-    const [isAdmin] = useAdmin(user?.email);
-    const [isSeller] = useSeller(user?.email);
-    const [isBuyer] = useBuyer(user?.email);
+    const [isAdmin] = useAdmin(user?.email)
+    const [isSeller] = useSeller(user?.email)
+    const [isBuyer] = useBuyer(user?.email)
     return (
         <div>
             <Navbar></Navbar>
@@ -23,6 +23,7 @@ const DashBoardLayout = () => {
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
+                        <Link to="/dashboard" className='font-semibold'>Menu Bar</Link>
                         {
                             isBuyer && <>
                                 <li><Link to="/dashboard/myorders" className='font-semibold'>My Orders</Link></li>
@@ -42,6 +43,7 @@ const DashBoardLayout = () => {
                                 <li><Link to="/dashboard/myproduct" className='font-semibold'>My Product</Link></li>
                             </>
                         }
+
                     </ul>
                 </div>
             </div>

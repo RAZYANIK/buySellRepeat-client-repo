@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import BookingModal from './BookingModal/BookingModal';
 import Product from './Product';
 
@@ -25,6 +25,9 @@ const ProductDetails = () => {
                         <Product key={product._id} product={product} setBooking={setBooking} ></Product>
                     ))
                 }
+            </div>
+            <div className='flex justify-center items-center'>
+                <Link to='/allproduct'><button className='btn btn-success'>show All</button></Link>
             </div>
             {booking &&
                 <BookingModal

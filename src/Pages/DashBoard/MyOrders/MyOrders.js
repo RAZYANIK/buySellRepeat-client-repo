@@ -1,23 +1,26 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
-import PrimaryButton from '../../../components/Button/PrimaryButton';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
 import Loading from '../../Shared/Loading/Loading';
 
 const MyOrders = () => {
     const { user } = useContext(AuthContext);
+    const handleToast = () => {
+        toast('Your Payment is Successful')
+    }
+    const url = `https://assignment-12-server-omega.vercel.app/bookings?email=${user?.email}`;
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
-
-    const { data: bookings = [''], isLoading } = useQuery({
+    const { data: bookings = [], refetch, isLoading } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                }
+                // headers: {
+                //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+                // }
             });
             const data = await res.json();
+            refetch();
             return data;
         }
     })
@@ -27,7 +30,7 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h3 className="text-3xl mb-5">My Appointments</h3>
+            <h3 className="text-3xl mb-5">My Orders</h3>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -48,7 +51,7 @@ const MyOrders = () => {
                                 <td>{booking.Product}</td>
                                 <td>{booking.resalePrice}</td>
                                 <td>{booking.meetingPlace}</td>
-                                <td><PrimaryButton>pay now</PrimaryButton></td>
+                                <td><button className='btn btn-success' onClick={handleToast}>pay now</button></td>
                             </tr>)
                         }
                     </tbody>
