@@ -1,6 +1,4 @@
-Assignment-12:
-
-site name:BuySellRepeat
+site name: BuySellRepeat
 
 site link: https://assignment-12-9aa5e.web.app/
 
